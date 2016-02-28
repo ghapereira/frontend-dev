@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/ghapereira/blgex/contents'
+let g:netrw_dirhist_2='/Users/ghapereira/Dropbox/Curriculim'
+let g:netrw_dirhist_3='/Users/ghapereira'
+let g:netrw_dirhist_4='/Users/ghapereira/Documents/IC_political_communities/.git'
