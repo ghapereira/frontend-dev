@@ -25,10 +25,14 @@ with the /vagrant directory in the vagrant box. This way you can edit the files 
 ## vim
 After installing the machine, for the vim configuration to be complete you need to copy the file .vimrc and the directory
 .vim to the home of the GUEST machine:
+
 cp .vimrc ~/
+
 cp -r .vim ~/
 
 ## Author
 Gustavo Pereira
+
 Some resources I've used in building it:
+
 [Doug Black's .vimrc](http://dougblack.io/words/a-good-vimrc.html)
