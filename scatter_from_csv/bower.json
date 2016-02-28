@@ -1,0 +1,30 @@
+{
+  "name": "scatter_from_csv",
+  "description": "A simple data visualization project",
+  "main": "votes_scatter_data.html",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "javascript",
+    "csv",
+    "dragndrop"
+  ],
+  "authors": [
+    "ghapereira"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-ui": "^1.11.4",
+    "paper": "^0.9.25"
+  }
+}

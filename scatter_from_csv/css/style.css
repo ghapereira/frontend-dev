@@ -1,0 +1,125 @@
+/**
+ * Color palette:
+ * 
+ *  #558C89
+ *  #74AFAD
+ *  #D9853B
+ *  #ECECEA
+ *  source: http://blog.crazyegg.com/2012/07/11/website-color-palettes/
+ */
+
+#pagecontainer {
+    background-color: #f6f6f6;
+}
+
+.pageHeader {
+    background-color: #558C89;
+    height: 80px;
+    position: relative;
+}
+
+.pageTitle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    text-decoration: bold;
+    font-size: 40px;
+    color: #ECECEA;
+}
+
+.dataPanel {
+    border-radius: 25px;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 50px;
+    border: solid #74AFAD 5px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+}
+
+.centerBoxedText {
+    text-align: center;
+}
+
+.mainPageImg {
+    max-width: 400px;
+}
+
+.basePlot {
+    max-width: 100%;    
+}
+
+#lineCutSlider {
+    width: 200px;
+    margin: 15px auto;
+}
+
+/* Right of handler */
+.ui-widget-content { 
+    border: 1px solid #ECECEA;
+    background: #ECECEA; 
+}
+
+/* Left of handler */
+.ui-widget-header { 
+    border: 1px solid #558C89;
+    background: #558C89;
+}       
+
+/* Drag'n'drop */
+#csvInput {
+    background-color: #ECECEA;
+    margin: 50px auto;
+    padding: 50px;
+    max-width: 600px;
+    max-height: 200px;
+    border-radius: 25px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+}
+
+#drop_zone {
+    margin: 20px auto;
+    text-align: center;
+    color: #D9853B;
+}
+
+/* Table */
+#votesDataTableContainer {
+    padding: 20px;
+    margin-bottom: 50px;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    max-width: 80%;
+}
+
+#votesDataTable {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#votesDataTableContainer .firstColumnData {
+    border-left: none;
+}
+
+#votesDataTableContainer td {
+    border-left: 1px solid black;
+    padding: 5px;
+}
+
+.headerCell {
+    background-color: #ECECEA;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.selectedRow {
+    background-color: #74AFAD;
+}
+
+

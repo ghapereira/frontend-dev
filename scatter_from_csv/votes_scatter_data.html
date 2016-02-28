@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+   <head>
+    <meta charset="utf-8">
+    <title>Scatter Vote Data from CSV</title>    
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <link href="bower_components/jquery-ui/themes/ui-lightness/jquery-ui.css" rel="stylesheet">      
+    <script type="text/javascript" src="bower_components/jquery-ui/jquery-ui.min.js"></script>        
+    <script src="bower_components/paper/dist/paper-full.min.js"></script>
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="scripts/slider.js"></script>
+   </head>
+
+   <body>
+        <div id="pagecontainer">
+        <div class="pageHeader">
+            <div class="pageTitle">Visualizador de votações</div>
+        </div> <!-- .pageHeader -->
+
+        <div class="dataPanel">            
+        <script type="text/paperscript" src="scripts/visual.js" canvas="scatterPlotCanvas"></script>
+            <canvas id="scatterPlotCanvas" resize></canvas>
+
+            <div id="lineCutSlider"></div>
+            <div id="lineCutThreshold" class="centerBoxedText">0</div>
+        </div> <!-- .dataPanel -->
+
+        <div id="csvInput">
+            <div id="drop_zone">Drop files here</div>
+            <output id="list"></output>                
+            <script src="scripts/dragndrop.js" type="text/javascript"></script>            
+        </div> <!-- .csvInput -->
+
+        <div id="votesDataTableContainer">
+            <table id="votesDataTable" class="voteDisplayData">
+            </table>
+        </div>
+    </div> <!-- pagecontainer -->
+
+   </body>
+</html>
