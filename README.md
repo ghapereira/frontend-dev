@@ -14,9 +14,20 @@ can be used for many more things. This is just the focus I use.
 
 In your native system (Linux, MacOSX, Windows, ...) you need to install Vagrant and a provider, VirtualBox in this case.
 After installing it, you need to clone this project (git clone https://github.com/ghapereira/frontend-dev) to the directory
-of your project and then run the command vagrant up. It will download the box (virtual machine image) if you don't already
+of your project and then run the command 
+```bash
+vagrant up
+```
+It will download the box (virtual machine image) if you don't already
 have it, and then it will put the machine to run. After it you just need to run vagrant ssh to login to it, and you can
-exit by typing exit. To suspend the machine you need the command vagrant suspend, and to deactivate it, vagrant halt.
+exit by typing exit. To suspend the machine you need the command 
+```
+vagrant suspend
+```
+and to deactivate it, 
+```bash
+vagrant halt
+```
 A comprehensive list can be found [here](https://www.vagrantup.com/docs/cli/).
 
 After the machine is installed you can notice that the contents of the project folder in your host system are synchronized
@@ -25,10 +36,10 @@ with the /vagrant directory in the vagrant box. This way you can edit the files 
 ## vim
 After installing the machine, for the vim configuration to be complete you need to copy the file .vimrc and the directory
 .vim to the home of the GUEST machine:
-
+```bash
 cp .vimrc ~/
-
 cp -r .vim ~/
+```
 
 ## Author
 Gustavo Pereira
