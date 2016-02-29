@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 apt-get update
+
+# Install vim
+#------------
 apt-get install -y vim
 
 # Apache

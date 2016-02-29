@@ -5,9 +5,11 @@
 
 window.globals = {
   disciplineList: [],
-  obstructionList: [],    
+  obstructionList: [],   
+  HORIZONTAL_SIZE: 500,
+  VERTICAL_SIZE: 500,
   initScatterPanel: function(){          
-    view.viewSize = new Size(300, 250);
+    view.viewSize = new Size(globals.HORIZONTAL_SIZE, globals.VERTICAL_SIZE);
 
     if(globals.disciplineList.length !== globals.obstructionList.length){
       alert("Error on size of the attributes!");
@@ -18,33 +20,20 @@ window.globals = {
       y = globals.obstructionList[i];
 
       new Path.Circle({
-        center: [x * 300, y * 1000],
+        center: [globals.HORIZONTAL_SIZE - (x * 500), 
+                 globals.VERTICAL_SIZE - (y * 800)],
         radius: 3,
         fillColor: 'blue',
         opacity: 0.5
       });
     }    
-
-    new Path.Circle({
-      center: [150, 125],
-      radius: 10,
-      fillColor: 'red',
-      opacity: 0.5
-    });
-
-    new Path.Circle({
-      center: [0, 0],
-      radius: 10,
-      fillColor: 'red',
-      opacity: 0.5
-    });
-
-    new Path.Circle({
-      center: [300, 250],
-      radius: 10,
-      fillColor: 'red',
-      opacity: 0.5
-    });
+    
+/*    new Path.Circle({
+        center: [10, 10],
+        radius: 10,
+        fillColor: 'black',
+        opacity: 0.8
+    });*/
 
     view.update();  
   }
