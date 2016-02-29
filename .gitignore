@@ -2,3 +2,4 @@
 bower_components/
 .vagrant/
 *.swp
+scatter_from_csv/
