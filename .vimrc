@@ -1,7 +1,7 @@
-set number
-set autoindent
-colorscheme badwolf
-syntax on
+set number              " show line number
+set autoindent          " autoindent based on last indent
+colorscheme badwolf     " color scheme
+syntax on               " syntax coloring
 set tabstop=4           " number of visual spaces per TAB
 set softtabstop=4       " number of spaces in tab when editing
 set expandtab           " tabs into spaces
@@ -22,6 +22,7 @@ nnoremap gV `[v`]
 set runtimepath^=~/.vim/bundle/ag
 " color after line 80
 let &colorcolumn=join(range(81,999), ",")
-" highlight trailing spaces
+" show trailing spaces
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :match ExtraWhitespace /\s\+$/
+set ruler               " display the cursor position in the lower right corner
