@@ -47,4 +47,5 @@ Gustavo Pereira
 Some resources I've used in building it:
 
 [Doug Black's .vimrc](http://dougblack.io/words/a-good-vimrc.html)
+
 [geomagilles' bootstrap.sh](https://github.com/geomagilles/vagrant-grunt-bower/blob/master/bootstrap.sh)
