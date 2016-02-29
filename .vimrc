@@ -17,8 +17,11 @@ set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 set foldmethod=indent   " fold based on indent level
 " highlight last inserted text
-nnoremap gV `[v`]  
+nnoremap gV `[v`]
 " the silver searcher, on vim
 set runtimepath^=~/.vim/bundle/ag
 " color after line 80
 let &colorcolumn=join(range(81,999), ",")
+" highlight trailing spaces
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:match ExtraWhitespace /\s\+$/
