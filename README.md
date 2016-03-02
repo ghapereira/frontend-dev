@@ -41,7 +41,7 @@ cp .vimrc ~/
 cp -r .vim ~/
 ```
 
-## Plugins
+### Vim Plugins
 I found that using [Vundle](https://github.com/VundleVim/Vundle.vim) is extremly benefitial for a good use of
 Vim. And here are some of the plugins I'm using:
 
