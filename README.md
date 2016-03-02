@@ -47,7 +47,7 @@ Vim. And here are some of the plugins I'm using:
 
 * [MatchTag](https://github.com/gregsexton/MatchTag), that matches HTML tags
 
-* [Powerline](https://github.com/Lokaltog/vim-powerline), that gets a nice information
+* [Powerline](https://github.com/Lokaltog/vim-powerline), that gets a nice information bar
 
 * [Python PEP8](https://github.com/nvie/vim-flake8)
 
