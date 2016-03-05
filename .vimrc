@@ -24,8 +24,14 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 syntax on               " syntax coloring
-nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
-set number              " show line number
+" remap Ctrl+(JKLH) to move through panels
+nnoremap  <C-J> <C-W><C-J>
+nnoremap  <C-K> <C-W><C-K>
+nnoremap  <C-L> <C-W><C-L>
+nnoremap  <C-H> <C-W><C-H>
+" remap <,>+<Space> to remove search color
+nnoremap ,<Space> :nohlsearch
+set number              " show line numbers
 set autoindent          " autoindent based on last indent
 colorscheme badwolf     " color scheme
 set tabstop=2           " number of visual spaces per TAB
@@ -51,12 +57,13 @@ set runtimepath^=~/.vim/bundle/ag
 " color after line 80
 " let &colorcolumn=join(range(81,999), ",")
 " show trailing spaces
-:highlight ExtraWhitespace ctermbg=red guibg=red
-:match ExtraWhitespace /\s\+$/
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
 set ruler               " display the cursor position in the lower right corner
-set smartindent
-set encoding=utf-8
-set t_Co=256
+set smartindent         " TODO explain
+set encoding=utf-8      " document encoding
+set t_Co=256            " TODO explain
+set scrolloff=5         " scrolloff lines
 
 " TABS
 " Show tab number
