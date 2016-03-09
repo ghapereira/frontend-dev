@@ -15,6 +15,11 @@ Plugin 'mattn/emmet-vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'Valloric/MatchTagAlways'
+" vim start screen with last used files
+Plugin 'mhinz/vim-startify'
+Plugin 'altercation/vim-colors-solarized'
+
 " status bar
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'nvie/vim-flake8'
@@ -23,7 +28,9 @@ Plugin 'nvie/vim-flake8'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-syntax on               " syntax coloring
+syntax on               " syntax coloring; enable uses from theme, on overrides for defaults
+nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
+
 " remap Ctrl+(JKLH) to move through panels
 nnoremap  <C-J> <C-W><C-J>
 nnoremap  <C-K> <C-W><C-K>
@@ -33,7 +40,11 @@ nnoremap  <C-H> <C-W><C-H>
 nnoremap ,<Space> :nohlsearch
 set number              " show line numbers
 set autoindent          " autoindent based on last indent
-colorscheme badwolf     " color scheme
+
+"colorscheme badwolf     " color scheme
+set background=light
+colorscheme solarized
+
 set tabstop=2           " number of visual spaces per TAB
 set softtabstop=2       " number of spaces in tab when editing
 set expandtab           " tabs into spaces
@@ -45,11 +56,6 @@ set showmatch           " match brackets and parenthesis
 set incsearch           " search as characters are inserted
 set hlsearch            " highlight search matches
 set nowrap
-" Use :nohlsearch to deactivate search highlight after finding
-set foldenable          " enable folding (hiding parts of the file)
-set foldlevelstart=10   " open most folds by default
-set foldnestmax=10      " 10 nested fold max
-set foldmethod=indent   " fold based on indent level
 " highlight last inserted text
 nnoremap gV `[v`]
 " the silver searcher, on vim
@@ -62,7 +68,8 @@ match ExtraWhitespace /\s\+$/
 set ruler               " display the cursor position in the lower right corner
 set smartindent         " TODO explain
 set encoding=utf-8      " document encoding
-set t_Co=256            " TODO explain
+let g:solarized_termcolors=256 " fix solarized colros
+set t_Co=16             " terminal colors
 set scrolloff=5         " scrolloff lines
 
 " TABS
