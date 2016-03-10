@@ -18,6 +18,8 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'Valloric/MatchTagAlways'
 " vim start screen with last used files
 Plugin 'mhinz/vim-startify'
+
+" Solarized theme
 Plugin 'altercation/vim-colors-solarized'
 
 " status bar
@@ -36,13 +38,14 @@ nnoremap  <C-J> <C-W><C-J>
 nnoremap  <C-K> <C-W><C-K>
 nnoremap  <C-L> <C-W><C-L>
 nnoremap  <C-H> <C-W><C-H>
+
 " remap <,>+<Space> to remove search color
 nnoremap ,<Space> :nohlsearch
 set number              " show line numbers
 set autoindent          " autoindent based on last indent
 
 "colorscheme badwolf     " color scheme
-set background=light
+set background=dark
 colorscheme solarized
 
 set tabstop=2           " number of visual spaces per TAB
@@ -56,8 +59,10 @@ set showmatch           " match brackets and parenthesis
 set incsearch           " search as characters are inserted
 set hlsearch            " highlight search matches
 set nowrap
+
 " highlight last inserted text
 nnoremap gV `[v`]
+
 " the silver searcher, on vim
 set runtimepath^=~/.vim/bundle/ag
 " color after line 80
@@ -65,12 +70,17 @@ set runtimepath^=~/.vim/bundle/ag
 " show trailing spaces
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+
 set ruler               " display the cursor position in the lower right corner
 set smartindent         " TODO explain
 set encoding=utf-8      " document encoding
 let g:solarized_termcolors=256 " fix solarized colros
 set t_Co=16             " terminal colors
 set scrolloff=5         " scrolloff lines
+
+" trailing spaces
+set list
+set listchars=tab:>.,trail:.,extends:\#,nbsp:.
 
 " TABS
 " Show tab number
