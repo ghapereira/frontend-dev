@@ -18,6 +18,10 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'Valloric/MatchTagAlways'
 " vim start screen with last used files
 Plugin 'mhinz/vim-startify'
+" file browser
+Plugin 'scrooloose/NERDTree'
+" git status
+Plugin 'airblade/vim-gitgutter'
 
 " Solarized theme
 Plugin 'altercation/vim-colors-solarized'
@@ -45,7 +49,7 @@ set number              " show line numbers
 set autoindent          " autoindent based on last indent
 
 "colorscheme badwolf     " color scheme
-set background=dark
+set background=light
 colorscheme solarized
 
 set tabstop=2           " number of visual spaces per TAB
