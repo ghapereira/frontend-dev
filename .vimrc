@@ -52,10 +52,18 @@ set autoindent          " autoindent based on last indent
 set background=light
 colorscheme solarized
 
+" tabs config
 set tabstop=2           " number of visual spaces per TAB
 set softtabstop=2       " number of spaces in tab when editing
 set expandtab           " tabs into spaces
-set shiftwidth=2
+set shiftwidth=2        " how many columns text is indented with reindent operation
+
+" specific tabs config for filetype
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType c setlocal shiftwidth=8 tabstop=8 softtabstop=8
+
+
 set showcmd             " show last command in bottom bar
 set cursorline          " hihlight current line
 set lazyredraw          " redraw only when needed
