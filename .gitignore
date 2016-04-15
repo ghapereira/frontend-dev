@@ -4,3 +4,5 @@ bower_components/
 *.swp
 scatter_from_csv/
 oldvimrc
+ibd
+ibd/*
