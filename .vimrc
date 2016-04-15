@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " vim-less
 Plugin 'groenewege/vim-less'
+" emmet (autocomplete)
 Plugin 'mattn/emmet-vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'hail2u/vim-css3-syntax'
@@ -24,10 +25,11 @@ Plugin 'scrooloose/NERDTree'
 Plugin 'airblade/vim-gitgutter'
 
 " Solarized theme
-Plugin 'altercation/vim-colors-solarized'
+" Plugin 'altercation/vim-colors-solarized'
 
 " status bar
 Plugin 'Lokaltog/vim-powerline'
+" Python static syntax and style checker. PEP8.
 Plugin 'nvie/vim-flake8'
 
 " All of your Plugins must be added before the following line
@@ -49,8 +51,9 @@ set number              " show line numbers
 set autoindent          " autoindent based on last indent
 
 "colorscheme badwolf     " color scheme
-set background=light
-colorscheme solarized
+" set background=light
+" colorscheme solarized
+colorscheme atom-dark-256
 
 " tabs config
 set tabstop=2           " number of visual spaces per TAB
@@ -87,12 +90,17 @@ set ruler               " display the cursor position in the lower right corner
 set smartindent         " TODO explain
 set encoding=utf-8      " document encoding
 let g:solarized_termcolors=256 " fix solarized colros
-set t_Co=16             " terminal colors
-set scrolloff=5         " scrolloff lines
+" set t_Co=16             " terminal colors
+set scrolloff=8         " scrolloff lines
 
 " trailing spaces
 set list
 set listchars=tab:>.,trail:.,extends:\#,nbsp:.
+
+" Emmet configs
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+imap hh <C-y>,
 
 " TABS
 " Show tab number
@@ -125,4 +133,18 @@ if exists("+showtabline")
      set stal=1
      set tabline=%!MyTabLine()
 endif
+
+" Toggle highlighting for the current word on and off (Enter).
+let g:highlighting = 0
+function! Highlighting()
+if g:highlighting == 1 && @/ =~ '^\\<'.expand('<cword>').'\\>$'
+  let g:highlighting = 0
+  return ":silent nohlsearch\<CR>"
+endif
+let @/ = '\<'.expand('<cword>').'\>'
+let g:highlighting = 1
+return ":silent set hlsearch\<CR>"
+endfunction
+
+
 set laststatus=2
