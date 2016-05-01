@@ -50,6 +50,10 @@ nnoremap ,<Space> :nohlsearch
 set number              " show line numbers
 set autoindent          " autoindent based on last indent
 
+" insert newline with enter (without entering insert mode)
+nmap <C-x> O<Esc>j
+nmap <CR> o<Esc>k
+
 "colorscheme badwolf     " color scheme
 " set background=light
 " colorscheme solarized
@@ -65,6 +69,7 @@ set shiftwidth=2        " how many columns text is indented with reindent operat
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType c setlocal shiftwidth=8 tabstop=8 softtabstop=8
+autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=2
 
 
 set showcmd             " show last command in bottom bar
