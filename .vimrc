@@ -19,18 +19,16 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'Valloric/MatchTagAlways'
 " vim start screen with last used files
 Plugin 'mhinz/vim-startify'
-" file browser
-Plugin 'scrooloose/NERDTree'
-" git status
-Plugin 'airblade/vim-gitgutter'
-
-" Solarized theme
-" Plugin 'altercation/vim-colors-solarized'
-
 " status bar
 Plugin 'Lokaltog/vim-powerline'
-" Python static syntax and style checker. PEP8.
+"PEP-8
 Plugin 'nvie/vim-flake8'
+" git status
+Plugin 'airblade/vim-gitgutter'
+" file browser
+Plugin 'scrooloose/NERDTree'
+" the silver searcher
+Plugin 'rking/ag.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -38,23 +36,19 @@ filetype plugin indent on    " required
 
 syntax on               " syntax coloring; enable uses from theme, on overrides for defaults
 nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
-
 " remap Ctrl+(JKLH) to move through panels
 nnoremap  <C-J> <C-W><C-J>
 nnoremap  <C-K> <C-W><C-K>
 nnoremap  <C-L> <C-W><C-L>
 nnoremap  <C-H> <C-W><C-H>
-
 " remap <,>+<Space> to remove search color
 nnoremap ,<Space> :nohlsearch
-set number              " show line numbers
+set number              " show line number
+set relativenumber
 set autoindent          " autoindent based on last indent
+set ignorecase          " ignore case on search
 
-" insert newline with enter (without entering insert mode)
-nmap <C-x> O<Esc>j
-nmap <CR> o<Esc>k
-
-"colorscheme badwolf     " color scheme
+" colorscheme badwolf     " color scheme
 " set background=light
 " colorscheme solarized
 colorscheme atom-dark-256
@@ -63,14 +57,11 @@ colorscheme atom-dark-256
 set tabstop=2           " number of visual spaces per TAB
 set softtabstop=2       " number of spaces in tab when editing
 set expandtab           " tabs into spaces
-set shiftwidth=2        " how many columns text is indented with reindent operation
-
+set shiftwidth=2
 " specific tabs config for filetype
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType c setlocal shiftwidth=8 tabstop=8 softtabstop=8
-autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=2
-
 
 set showcmd             " show last command in bottom bar
 set cursorline          " hihlight current line
@@ -78,29 +69,35 @@ set lazyredraw          " redraw only when needed
 set showmatch           " match brackets and parenthesis
 set incsearch           " search as characters are inserted
 set hlsearch            " highlight search matches
-set nowrap
+set nowrap              " display long lines as just one
 
 " highlight last inserted text
 nnoremap gV `[v`]
-
 " the silver searcher, on vim
 set runtimepath^=~/.vim/bundle/ag
 " color after line 80
 " let &colorcolumn=join(range(81,999), ",")
+
+" startify on new tabs
+" Not satisfactory; each new file will be opened as Startify
+" autocmd BufEnter * if !exists('t:startified') | Startify | let t:startified = 1 | endif
+
 " show trailing spaces
+set list
+set listchars=tab:>.,trail:.,extends:\#,nbsp:.
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
 set ruler               " display the cursor position in the lower right corner
-set smartindent         " TODO explain
-set encoding=utf-8      " document encoding
-let g:solarized_termcolors=256 " fix solarized colros
-" set t_Co=16             " terminal colors
-set scrolloff=8         " scrolloff lines
+set smartindent
+set encoding=utf-8
+" let g:solarized_termcolors=256
+set t_Co=256
+set scrolloff=8              " keep the cursor N lines under the top margin and above the bottom one
 
-" trailing spaces
-set list
-set listchars=tab:>.,trail:.,extends:\#,nbsp:.
+" Sessions
+set ssop-=options       " do not store global and local variables in a session
+set ssop-=folds         " do not store folds
 
 " Emmet configs
 let g:user_emmet_install_global = 0
@@ -142,14 +139,13 @@ endif
 " Toggle highlighting for the current word on and off (Enter).
 let g:highlighting = 0
 function! Highlighting()
-if g:highlighting == 1 && @/ =~ '^\\<'.expand('<cword>').'\\>$'
-  let g:highlighting = 0
-  return ":silent nohlsearch\<CR>"
-endif
-let @/ = '\<'.expand('<cword>').'\>'
-let g:highlighting = 1
-return ":silent set hlsearch\<CR>"
+ if g:highlighting == 1 && @/ =~ '^\\<'.expand('<cword>').'\\>$'
+   let g:highlighting = 0
+   return ":silent nohlsearch\<CR>"
+ endif
+ let @/ = '\<'.expand('<cword>').'\>'
+ let g:highlighting = 1
+ return ":silent set hlsearch\<CR>"
 endfunction
-
 
 set laststatus=2
