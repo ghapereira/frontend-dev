@@ -73,4 +73,12 @@ Vagrant.configure(2) do |config|
 
   # Change the vagrant user's shell to use zsh
   config.vm.provision :shell, inline: "chsh -s /bin/zsh vagrant"
+
+  # Copy vimrc to home
+  config.vm.provision :shell, privileged: false,
+  inline: "cp /vagrant/.vimrc ~/.vimrc"
+
+  # Vundle install
+  config.vm.provision :shell, privileged: false,
+  inline: "git clone git://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim"
 end
