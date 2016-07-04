@@ -1,6 +1,6 @@
 # frontend-dev
-This is my personal frontend development environment, consisting in a Ubuntu-based Vagrant box with some things
-pre-installed (vim, node, grunt, bower, apache)
+This is my personal frontend development environment, consisting in a Ubuntu-based Vagrant box with some useful things
+pre-installed.
 
 ## How to
 
@@ -34,22 +34,12 @@ After the machine is installed you can notice that the contents of the project f
 with the /vagrant directory in the vagrant box. This way you can edit the files there even if the machine isn't running.
 
 ## vim
-After installing the machine, for the vim configuration to be complete you need to copy the file .vimrc and the directory
-.vim to the home of the GUEST machine:
-```bash
-cp .vimrc ~/
-cp -r .vim ~/
-```
-
-### Vim Plugins
-I found that using [Vundle](https://github.com/VundleVim/Vundle.vim) is extremly benefitial for a good use of
-Vim. And here are some of the plugins I'm using:
-
-* [MatchTag](https://github.com/gregsexton/MatchTag), that matches HTML tags
-
-* [Powerline](https://github.com/Lokaltog/vim-powerline), that gets a nice information bar
-
-* [Python PEP8](https://github.com/nvie/vim-flake8)
+After installing the machine, for the vim configuration to be complete you need to install the added plugins on .vimrc with 
+[Vundle](https://github.com/VundleVim/Vundle.vim).
+Just start vim and type ':PluginInstall' while on Normal Mode. More info about the process can be found at 
+[Vundle](https://github.com/VundleVim/Vundle.vim), and the plugins I use are detailed on the .vimrc.
+And the used theme is not installed (I haven't figured out how yet), so you need to clone the [Atom Dark Theme](https://github.com/gosukiwi/vim-atom-dark) and install
+it according to the instructions. Then you are good to go!
 
 ## Author
 Gustavo Pereira
