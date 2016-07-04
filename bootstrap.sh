@@ -42,6 +42,14 @@ apt-get install -y git-core
 # ----------
 apt-get install -y silversearcher-ag
 
+# Install dos2unix
+# ----------------
+apt-get install -y dos2unix
+
+# Install htop
+# ------------
+apt-get install -y htop
+
 # Install Node js
 # ---------------
 apt-get install -y python-software-properties python g++ make

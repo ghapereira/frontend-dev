@@ -50,20 +50,27 @@ Vagrant.configure(2) do |config|
   #   # Customize the amount of memory on the VM:
   #   vb.memory = "1024"
   # end
-  #
-  # View the documentation for the provider you are using for more
-  # information on available options.
 
-  # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
-  # such as FTP and Heroku are also available. See the documentation at
-  # https://docs.vagrantup.com/v2/push/atlas.html for more information.
-  # config.push.define "atlas" do |push|
-  #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
-  # end
 
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision :shell, path: "bootstrap.sh"
   config.vm.network :forwarded_port, guest: 80, host: 4567
+
+  # Oh My ZSH Install section
+  # Install git and zsh prerequisites
+  config.vm.provision :shell, inline: "apt-get -y install git"
+  config.vm.provision :shell, inline: "apt-get -y install zsh"
+
+  # Clone Oh My Zsh from the git repo
+  config.vm.provision :shell, privileged: false,
+  inline: "git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh"
+
+  # Copy in the default .zshrc config file
+  config.vm.provision :shell, privileged: false,
+  inline: "cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc"
+
+  # Change the vagrant user's shell to use zsh
+  config.vm.provision :shell, inline: "chsh -s /bin/zsh vagrant"
 end
