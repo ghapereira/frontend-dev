@@ -78,7 +78,13 @@ Vagrant.configure(2) do |config|
   config.vm.provision :shell, privileged: false,
   inline: "cp /vagrant/.vimrc ~/.vimrc"
 
+  # Copy tmux.conf to home
+  config.vm.provision :shell, privileged: false,
+  inline: "cp /vagrant/.tmux.conf ~/.tmux.conf"
+
   # Vundle install
   config.vm.provision :shell, privileged: false,
   inline: "git clone git://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim"
+
 end
+
